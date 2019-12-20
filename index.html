@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+   <div>
+       <img src="img/qq.png">
+       <img src="img/wechat.png">
+       <img src="img/weibo.png">
+       <img src="img/github.png">
+   </div>
+</body>
+<script>
+    $(".github").click(function () {
+        location.href = "https://github.com/login/oauth/authorize?client_id=xxxxx&state=xxx&redirect_uri=http://localhost/oauth-github/github.php; "
+    })
+    $(".weibo").click(function () {
+        location.href = "https://api.weibo.com/oauth2/authorize?client_id=2773864469&redirect_uri=http://localhost/oauth-github/weibo.php";
+    })
+    $(".weixin").click(function () {
+        location.href = "https://open.weixin.qq.com/connect/qrconnect?appid=APPID&redirect_uri=http://localhost/oauth-github/weixin.php&response_type=code&scope=SCOPE&state=STATE#wechat_redirect";
+    })
+    $(".qq").click(function () {
+        location.href = "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=[YOUR_APPID]&redirect_uri=http://localhost/oauth-github/qq.php&scope=[THE_SCOPE]";
+    })
+</script>
+</html>
