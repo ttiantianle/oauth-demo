@@ -7,9 +7,9 @@ $res = Curl::http_get('https://api.weixin.qq.com/sns/oauth2/access_token?appid=A
 $info = json_decode($res,true);
 if (isset($info['access_token']))
 {
-    $access_token = $info['access_tokrn'];
-    $uid = $info['uid'];
-    $USERINFO_URL = 'https://api.weibo.com/2/users/show.json?access_token='.$access_token."&uid=".$uid;
+    $access_token = $info['access_token'];
+    $openid = $info['openid'];
+    $USERINFO_URL = "https://api.weixin.qq.com/sns/userinfo?access_token=".$access_token."&openid=".$openid;
     $userJson = Curl::http_get($USERINFO_URL);
     var_dump(json_decode($userJson,true));
 }else{
